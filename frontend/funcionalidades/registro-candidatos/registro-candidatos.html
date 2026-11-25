@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción de candidatos</title>
+    <link rel="stylesheet" href="registro-candidatos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="pagina">
+
+        <header class="encabezado">
+            <div class="marca">
+                <span class="marca-icono">CE</span>
+                <span>CONSTRUCTOR DE EXÁMENES</span>
+            </div>
+        </header>
+
+        <section class="contenedor-formulario">
+
+            <div class="ilustracion">
+                <div class="circulo">
+                    <span>✦</span>
+                </div>
+            </div>
+
+            <div class="contenido">
+
+                <span class="etiqueta">FORMULARIO DE INSCRIPCIÓN</span>
+
+                <h1>¡Queremos conocerte!</h1>
+
+                <p class="introduccion">
+                    Completa tus datos personales para solicitar tu incorporación
+                    a nuestra plataforma académica.
+                </p>
+
+                <div class="separador"></div>
+
+                <form id="formulario-candidato">
+
+                    <div class="campo">
+                        <label for="nombresApellidos">Nombres y apellidos</label>
+                        <input
+                            type="text"
+                            id="nombresApellidos"
+                            name="nombresApellidos"
+                            placeholder="Escribe tus nombres y apellidos"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="cedula">Cédula de identidad</label>
+                        <input
+                            type="text"
+                            id="cedula"
+                            name="cedula"
+                            placeholder="Ingresa tu número de cédula"
+                            autocomplete="off"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="correoElectronico">Correo electrónico</label>
+                        <input
+                            type="email"
+                            id="correoElectronico"
+                            name="correoElectronico"
+                            placeholder="ejemplo@correo.com"
+                            autocomplete="email"
+                            required
+                        >
+                        <small>Utilizaremos este correo para tu futura cuenta de acceso.</small>
+                    </div>
+
+                    <div class="aviso">
+                        <span class="aviso-icono">i</span>
+                        <p>
+                            El envío de este formulario constituye una solicitud
+                            de inscripción. El registro no crea automáticamente
+                            una cuenta ni garantiza la admisión a la plataforma.
+                        </p>
+                    </div>
+
+                    <button type="submit" id="enviar-candidato">
+                        Enviar solicitud
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+                <p class="pie-formulario">
+                    Tus datos serán revisados por el personal docente.
+                </p>
+
+            </div>
+        </section>
+
+        <footer>
+            Constructor de Exámenes · Registro de candidatos
+        </footer>
+
+    </main>
+
+    <script src="registro-candidatos.js" defer></script>
+</body>
+</html>
+

@@ -1,0 +1,275 @@
+﻿:root {
+    --primario: #5c1d53;
+    --primario-oscuro: #471440;
+    --secundario: #178a75;
+    --fondo: #f5f4f7;
+    --texto: #302b38;
+    --gris: #777482;
+    --borde: #e8e5eb;
+    --blanco: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Inter', Arial, sans-serif;
+    color: var(--texto);
+    background:
+        radial-gradient(circle at 10% 10%, #eee5ef 0, transparent 35%),
+        var(--fondo);
+}
+
+.pagina {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.encabezado {
+    width: 100%;
+    padding: 25px 7%;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: var(--primario);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.marca-icono {
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    display: grid;
+    place-items: center;
+    color: white;
+    background: var(--primario);
+    font-size: 12px;
+    letter-spacing: 0;
+}
+
+.contenedor-formulario {
+    width: calc(100% - 32px);
+    max-width: 570px;
+    margin: 35px auto 45px;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 19px;
+    overflow: hidden;
+    box-shadow: 0 15px 45px rgba(47, 28, 50, 0.07);
+}
+
+.ilustracion {
+    height: 125px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(120deg, #5c1d53, #874578);
+    position: relative;
+    overflow: hidden;
+}
+
+.ilustracion::before,
+.ilustracion::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border: 1px solid rgba(255,255,255,0.13);
+    border-radius: 50%;
+}
+
+.ilustracion::before {
+    left: -55px;
+    top: -105px;
+}
+
+.ilustracion::after {
+    right: -45px;
+    bottom: -130px;
+}
+
+.circulo {
+    width: 58px;
+    height: 58px;
+    border-radius: 18px;
+    display: grid;
+    place-items: center;
+    background: rgba(255,255,255,0.16);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    font-size: 30px;
+}
+
+.contenido {
+    padding: 35px 42px 30px;
+}
+
+.etiqueta {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: var(--secundario);
+}
+
+h1 {
+    font-size: 27px;
+    letter-spacing: -0.9px;
+    margin-top: 10px;
+    color: var(--primario);
+}
+
+.introduccion {
+    color: var(--gris);
+    font-size: 12px;
+    line-height: 1.8;
+    margin-top: 10px;
+}
+
+.separador {
+    height: 1px;
+    background: var(--borde);
+    margin: 25px 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.campo label {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.campo input {
+    height: 47px;
+    width: 100%;
+    padding: 0 14px;
+    border: 1px solid #dedbe4;
+    border-radius: 8px;
+    background: #fff;
+    color: var(--texto);
+    font-family: inherit;
+    font-size: 12px;
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.campo input::placeholder {
+    color: #aaa7b2;
+}
+
+.campo input:focus {
+    border-color: var(--primario);
+    box-shadow: 0 0 0 3px rgba(92,29,83,0.08);
+}
+
+.campo small {
+    font-size: 10px;
+    color: var(--gris);
+}
+
+.aviso {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    padding: 14px;
+    border-radius: 9px;
+    background: #f1f7f5;
+    border: 1px solid #e0eee9;
+}
+
+.aviso-icono {
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--secundario);
+    color: white;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.aviso p {
+    font-size: 10px;
+    line-height: 1.7;
+    color: #52736a;
+}
+
+button {
+    height: 48px;
+    width: 100%;
+    border: none;
+    border-radius: 9px;
+    background: var(--primario);
+    color: white;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background: var(--primario-oscuro);
+    transform: translateY(-1px);
+}
+
+button span {
+    font-size: 17px;
+}
+
+.pie-formulario {
+    text-align: center;
+    margin-top: 22px;
+    color: var(--gris);
+    font-size: 10px;
+}
+
+footer {
+    margin-top: auto;
+    padding: 20px;
+    text-align: center;
+    color: #96929e;
+    font-size: 10px;
+}
+
+@media (max-width: 600px) {
+    .encabezado {
+        padding: 18px 20px;
+    }
+
+    .contenedor-formulario {
+        margin-top: 15px;
+    }
+
+    .contenido {
+        padding: 28px 23px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
