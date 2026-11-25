@@ -1,7 +1,7 @@
 ﻿const formulario = document.getElementById("formulario-candidato");
 const botonEnviar = document.getElementById("enviar-candidato");
 
-const API_CANDIDATOS = "http://localhost:3107/api/publico/candidatos";
+const API_CANDIDATOS = "https://examenes-002h.onrender.com/api/publico/candidatos";
 
 const mensajeEstado = document.createElement("p");
 mensajeEstado.id = "mensaje-estado-candidato";
