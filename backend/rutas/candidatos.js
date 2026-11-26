@@ -9,9 +9,14 @@ router.post("/", async (req, res) => {
     try {
         const cuerpo = req.body || {};
 
-        const nombresApellidos =
-            typeof cuerpo.nombresApellidos === "string"
-                ? cuerpo.nombresApellidos.trim().replace(/\s+/g, " ")
+        const nombres =
+            typeof cuerpo.nombres === "string"
+                ? cuerpo.nombres.trim().replace(/\s+/g, " ")
+                : "";
+
+        const apellidos =
+            typeof cuerpo.apellidos === "string"
+                ? cuerpo.apellidos.trim().replace(/\s+/g, " ")
                 : "";
 
         const cedula =
@@ -24,14 +29,15 @@ router.post("/", async (req, res) => {
                 ? cuerpo.correoElectronico.trim().toLowerCase()
                 : "";
 
-        if (!nombresApellidos || !cedula || !correoElectronico) {
+        if (!nombres || !apellidos || !cedula || !correoElectronico) {
             return res.status(400).json({
                 error: "Debes completar todos los campos."
             });
         }
 
         if (
-            nombresApellidos.length > 120 ||
+            nombres.length > 80 ||
+            apellidos.length > 80 ||
             cedula.length > 30 ||
             correoElectronico.length > 254
         ) {
@@ -49,7 +55,8 @@ router.post("/", async (req, res) => {
         }
 
         const candidatoRef = await db.collection("candidatos").add({
-            nombresApellidos,
+            nombres,
+            apellidos,
             cedula,
             correoElectronico,
             estado: "pendiente",
