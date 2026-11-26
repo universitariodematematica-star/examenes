@@ -16,13 +16,21 @@ router.get("/pendientes", verificarDocente, async (req, res) => {
             const datos = documento.data();
 
             return {
-                nombresApellidos: datos.nombresApellidos || "",
+                nombres: datos.nombres || "",
+                apellidos: datos.apellidos || "",
                 cedula: datos.cedula || "",
                 correoElectronico: datos.correoElectronico || ""
             };
-        }).sort((a, b) =>
-            a.nombresApellidos.localeCompare(b.nombresApellidos, "es")
-        );
+        }).sort((a, b) => {
+            const comparacionApellidos =
+                a.apellidos.localeCompare(b.apellidos, "es");
+
+            if (comparacionApellidos !== 0) {
+                return comparacionApellidos;
+            }
+
+            return a.nombres.localeCompare(b.nombres, "es");
+        });
 
         return res.status(200).json({ candidatos });
 
