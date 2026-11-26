@@ -44,13 +44,27 @@
                 <form id="formulario-candidato">
 
                     <div class="campo">
-                        <label for="nombresApellidos">Nombres y apellidos</label>
+                        <label for="nombres">Nombres</label>
                         <input
                             type="text"
-                            id="nombresApellidos"
-                            name="nombresApellidos"
-                            placeholder="Escribe tus nombres y apellidos"
-                            autocomplete="name"
+                            id="nombres"
+                            name="nombres"
+                            placeholder="Escribe tus nombres"
+                            autocomplete="given-name"
+                            maxlength="80"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="apellidos">Apellidos</label>
+                        <input
+                            type="text"
+                            id="apellidos"
+                            name="apellidos"
+                            placeholder="Escribe tus apellidos"
+                            autocomplete="family-name"
+                            maxlength="80"
                             required
                         >
                     </div>
@@ -112,4 +126,5 @@
     <script src="registro-candidatos.js" defer></script>
 </body>
 </html>
+
 

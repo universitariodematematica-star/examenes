@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     --primario: #5c1d53;
     --primario-oscuro: #471440;
     --secundario: #178a75;
@@ -141,9 +141,17 @@ h1 {
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 18px;
+    row-gap: 20px;
+}
+
+.campo:nth-child(3),
+.campo:nth-child(4),
+.aviso,
+form button {
+    grid-column: 1 / -1;
 }
 
 .campo {
@@ -267,6 +275,10 @@ footer {
 
     .contenido {
         padding: 28px 23px;
+    }
+
+    form {
+        grid-template-columns: 1fr;
     }
 
     h1 {

@@ -18,9 +18,10 @@ formulario.addEventListener("submit", async (evento) => {
     }
 
     const datos = {
-        nombresApellidos: formulario.nombresApellidos.value.trim(),
+        nombres: formulario.nombres.value.trim().replace(/\s+/g, " "),
+        apellidos: formulario.apellidos.value.trim().replace(/\s+/g, " "),
         cedula: formulario.cedula.value.trim(),
-        correoElectronico: formulario.correoElectronico.value.trim()
+        correoElectronico: formulario.correoElectronico.value.trim().toLowerCase()
     };
 
     botonEnviar.disabled = true;
