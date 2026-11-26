@@ -5,6 +5,7 @@ const express = require("express");
 const verificarDocente = require("./middleware/verificar-docente");
 const docenteExamenesRouter = require("./rutas/docente-examenes");
 const candidatosRouter = require("./rutas/candidatos");
+const docenteCandidatosRouter = require("./rutas/docente-candidatos");
 const verificarEstudiante = require("./middleware/verificar-estudiante");
 const verificarAccesoExamen = require("./middleware/verificar-acceso-examen");
 
@@ -38,6 +39,7 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use("/api/docente/examenes", docenteExamenesRouter);
 app.use("/api/publico/candidatos", candidatosRouter);
+app.use("/api/docente/candidatos", docenteCandidatosRouter);
 
 app.get("/api/estado", (req, res) => {
     res.json({
